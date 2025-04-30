@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Art Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Virtual Art Gallery</h1>
+        <input type="text" id="searchBar" placeholder="Search artwork..." onkeyup="searchArtworks()">
+        <button class="music-btn" onclick="toggleMusic()">🎵 Music</button>
+    </header>
+
+    <main>
+        <div class="gallery">
+            <div class="art-container" onclick="openLightbox('images/art1.jpg', 'Artwork 1', 'A modern abstract painting.')">
+                <img src="images/art1.jpg" alt="Artwork 1">
+                <div class="info">Artwork 1 - Artist Name</div>
+            </div>
+            <div class="art-container" onclick="openLightbox('images/art2.jpg', 'Artwork 2', 'A stunning landscape.')">
+                <img src="images/art2.jpg" alt="Artwork 2">
+                <div class="info">Artwork 2 - Artist Name</div>
+            </div>
+            <div class="art-container" onclick="openLightbox('images/art3.jpg', 'Artwork 3', 'An elegant portrait.')">
+                <img src="images/art3.jpg" alt="Artwork 3">
+                <div class="info">Artwork 3 - Artist Name</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <button onclick="prevArtwork()">◀ Prev</button>
+        <button onclick="nextArtwork()">Next ▶</button>
+        <button onclick="toggleFullscreen()">🔍 Fullscreen</button>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <audio id="background-music" loop>
+        <source src="music/gallery-music.mp3" type="audio/mp3">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
